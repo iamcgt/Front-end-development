@@ -1,0 +1,168 @@
+body{
+    background-color: #e0e0e0;
+}
+.top{
+    width: 1018px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 10px 10px;
+}
+
+.text_head{
+    float: right;
+    text-align: right ;
+    font-size: 13px;
+    padding: 0px 10px;
+    margin-top: -13px;
+}
+
+.text_head:first-line{
+    font-size: 13px;
+}
+
+.text_head span{
+    color:red;
+    font-size: 20px;
+}
+
+nav{
+    margin-top: 13px;
+    text-align: center;
+    background-color: #625447;
+    color: white;
+    padding: 5px;
+    font-size: 13px;
+}
+
+nav ul{
+    margin: 0px;
+    list-style-type: none;
+    padding: 5px 0px 5px 5px;
+
+}
+nav ul li{
+    display: inline;
+    padding: 5px 22px;
+    border-left: 1px solid #cbcbcb;
+}
+
+nav ul li:first-child{
+    border-left: none;
+}
+
+.tableContent{
+    width: 1018px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    border-spacing: 10px;
+    
+}
+
+.tableRow{
+    display: table-row;
+}
+
+.aside_top_pic{
+   margin-bottom: -4px;
+}
+aside{
+    display: table-cell;
+    width: 231px;
+    text-align: center;
+    vertical-align: top;
+}
+
+aside p{
+    margin: 0px;
+}
+
+aside header p{
+    padding: 5px;
+    color: white;
+}
+
+aside ul{
+    margin: 0px;
+    padding: 10px 10px 10px 20px;
+    text-align: left;
+    list-style-type: none;
+    background-color: white;
+    font-size: 13px;
+}
+
+.top_aside ul li{
+    line-height: 25px;
+   border-bottom: 1px dashed #bfbfbf;
+
+}
+
+.top_aside{
+    width: 227px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.top_aside header{
+    background-color: #8c7a66;
+}
+
+.top_aside footer{
+    background-color: #cbcbcb;
+    padding: 8px;
+    color: #7b7b7b;
+}
+
+.foot_aside{
+    margin-top: 10px;
+}
+.pic_main img{
+    margin: 5px 11px;
+}
+.main{
+    display: table-cell;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.main p{
+    margin: 0px;
+}
+.main ul{
+    text-align: center;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.main ul li{
+    display: inline;
+    padding: 5px 10px 5px 10px;
+}
+
+footer{
+    text-align: center;
+    color: #888;
+    font-size: 10px;
+}
+footer ul{
+    background-color: #bfbfbf;
+    margin: 0px;
+    color: white;
+    list-style-type: none;
+    font-size: 15px;
+   padding: 10px 0px;
+
+}
+
+footer ul li{
+    display: inline;
+    padding: 5px 10px 5px 10px;
+    border-left: 1px solid white;
+}
+
+footer ul li:first-child{
+    border-left: none;
+}
+
+
+
