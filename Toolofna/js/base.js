@@ -77,58 +77,58 @@ $(document).ready(function () {
     /**
      * work
      */
-    $("#work div").css({"transform":"rotateY(0)"});
-    var length = $("#work div").first().width()/$("#work").width()*$(".scrollbar").width();
-    $(".scrollbar div").css("width",length);
-    var dis =0;
-    if(window.location.pathname.indexOf("/Toolofna/work.html")){
-        $(window).on("mousewheel",function(event){
-            //监听滚轮的上下移动
-            var value =  event.originalEvent.detail || event.originalEvent.wheelDelta;
-            if(value>0){
-                dis +=50;
-            }else{
-                dis-=50;
+        $("#work div").css({"transform": "rotateY(0)"});
+        var length = $("#work div").first().width() / $("#work").width() * $(".scrollbar").width();
+        $(".scrollbar div").css("width", length);
+        var dis = 0;
+        if(window.location.pathname.indexOf("Toolofna/work.html")!=-1) {
+            $(window).on("mousewheel", function (event) {
+                //监听滚轮的上下移动
+                var value = event.originalEvent.detail || event.originalEvent.wheelDelta;
+                if (value > 0) {
+                    dis += 50;
+                } else {
+                    dis -= 50;
+                }
+                move(dis);
+            });
+        }
+
+        function move(dis) {
+            $(".scrollbar div").css("left", dis);
+            //实现联动
+            var botton_total = $(".scrollbar").width() - $(".scrollbar div").width();
+            var top_total = $("#work").width() - $(".scrollbar").width();
+            var distance = (dis / botton_total) * top_total;
+            $("#work").css("left", -distance);
+
+            if ($(".scrollbar div").position().left < 0) {
+                $(".scrollbar div").css("left", 0);
+                $("#work").css("left", 0);
             }
-            move(dis);
+            if ($(".scrollbar div").position().left > ($(".scrollbar").width() - $(".scrollbar div").width())) {
+                $(".scrollbar div").css("left", ($(".scrollbar").width() - $(".scrollbar div").width()));
+                $("#work").css("left", -top_total);
+            }
+        }
+
+        var down = false;
+        $(".scrollbar").on("mousedown", function () {
+            down = true;
         });
-    }
-
-    function move(dis){
-        $(".scrollbar div").css("left",dis);
-        //实现联动
-        var botton_total = $(".scrollbar").width()-$(".scrollbar div").width();
-        var top_total = $("#work").width()-$(".scrollbar").width();
-        var distance = (dis / botton_total)*top_total;
-        $("#work").css("left",-distance);
-
-        if($(".scrollbar div").position().left<0){
-            $(".scrollbar div").css("left",0);
-            $("#work").css("left",0);
-        }
-        if($(".scrollbar div").position().left>($(".scrollbar").width()-$(".scrollbar div").width())){
-            $(".scrollbar div").css("left",($(".scrollbar").width()-$(".scrollbar div").width()));
-            $("#work").css("left",-top_total);
-        }
-    }
-
-    var down = false;
-    $(".scrollbar").on("mousedown",function(){
-        down = true;
-    });
-    $(document).on({
-        "mouseup":function(){
-            down = false;
-        },
-        "mousemove":function(event){
-            if(down){
-                //阻止鼠标默认事件
-                event.stopPropagation();
-                event.preventDefault();
-                var x = event.clientX;
-                var left = x - $(".scrollbar").offset().left-$(".scrollbar div").width()/2;
-                move(left);
+        $(document).on({
+            "mouseup": function () {
+                down = false;
+            },
+            "mousemove": function (event) {
+                if (down) {
+                    //阻止鼠标默认事件
+                    event.stopPropagation();
+                    event.preventDefault();
+                    var x = event.clientX;
+                    var left = x - $(".scrollbar").offset().left - $(".scrollbar div").width() / 2;
+                    move(left);
+                }
             }
-        }
-    });
+        });
 });
